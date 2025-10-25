@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #181818;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+.audio-controls {
+  margin: 40px auto 20px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.controls button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.visualizer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+#visualizer-canvas {
+  background: #222;
+  border: 2px solid #444;
+  border-radius: 10px;
+}
