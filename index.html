@@ -2,23 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Audio Visualizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Visualizer | Real-time Frequency & Waveform</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Audio Visualizer</h1>
-  <section class="audio-controls">
-    <audio id="audio" controls>
-      <source src="" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-    <div class="controls">
-      <button disabled>Play</button>
-      <button disabled>Pause</button>
-    </div>
-  </section>
-  <section class="visualizer">
-    <canvas id="visualizer-canvas" width="800" height="300"></canvas>
-  </section>
+  <div class="container">
+    <header>
+      <h1>🎵 Audio Visualizer</h1>
+      <p class="subtitle">Visualize audio frequencies and waveforms in real-time</p>
+    </header>
+
+    <section class="upload-section">
+      <div class="upload-area">
+        <input type="file" id="audioFile" accept="audio/*" hidden>
+        <label for="audioFile" class="upload-label">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          <span>Choose Audio File</span>
+          <span class="file-info">or drag & drop</span>
+        </label>
+      </div>
+      <p id="fileName" class="file-name"></p>
+    </section>
+
+    <section class="audio-controls">
+      <audio id="audio" controls></audio>
+      <div class="controls">
+        <button id="playBtn" class="btn btn-primary" disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          Play
+        </button>
+        <button id="pauseBtn" class="btn btn-secondary" disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+          Pause
+        </button>
+      </div>
+    </section>
+
+    <section class="visualizer-section">
+      <div class="visualizer-controls">
+        <div class="control-group">
+          <label for="visualMode">Visualization Mode:</label>
+          <select id="visualMode" class="select-input">
+            <option value="bars">Frequency Bars</option>
+            <option value="circular">Circular</option>
+            <option value="waveform">Waveform</option>
+            <option value="particles">Particles</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <label for="colorScheme">Color Scheme:</label>
+          <select id="colorScheme" class="select-input">
+            <option value="rainbow">Rainbow</option>
+            <option value="fire">Fire</option>
+            <option value="ocean">Ocean</option>
+            <option value="neon">Neon</option>
+            <option value="purple">Purple Haze</option>
+          </select>
+        </div>
+      </div>
+      <div class="canvas-container">
+        <canvas id="visualizerCanvas"></canvas>
+      </div>
+    </section>
+
+    <footer>
+      <p>Stage 1 & 2: HTML, CSS, and Canvas API Implementation</p>
+    </footer>
+  </div>
+
+  <script src="visualizer.js"></script>
 </body>
 </html>
