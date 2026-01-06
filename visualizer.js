@@ -323,7 +323,7 @@ class AudioVisualizer {
   drawBars() {
     const visualData = this.getVisualData();
     const bufferLength = visualData.length;
-    const barWidth = (this.canvas.width / bufferLength) - 2;
+    const barWidth = (this.canvas.width / bufferLength);
     let x = 0;
 
     for (let i = 0; i < bufferLength; i++) {
