@@ -52,12 +52,12 @@ class AudioVisualizer {
       this.audioContext = new AudioContext();
 
       this.analyser = this.audioContext.createAnalyser();
-      this.analyser.fftSize = 2048;
+      this.analyser.fftSize = 2048; // how many audio samples
       this.analyser.smoothingTimeConstant = 0.8;
       this.analyser.minDecibels = -90;
       this.analyser.maxDecibels = -10;
 
-      this.bufferLength = this.analyser.frequencyBinCount;
+      this.bufferLength = this.analyser.frequencyBinCount; // how many bins for visualization
       this.dataArray = new Uint8Array(this.bufferLength);
 
       this.audioSourceConnected = false;
